@@ -1,0 +1,19 @@
+name: CD Demo
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  simulate-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code auschecken
+        uses: actions/checkout@v3
+
+      - name: Version anzeigen
+        run: cat index.html
+
+      - name: Deployment simulieren
+        run: echo "✅ Deployment erfolgreich!"
